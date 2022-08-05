@@ -1,5 +1,7 @@
 import React from "react";
 import "./style.css";
+import ActiveList from "./ActiveList.js"
+import todos from "./TestData"
 
 export default function App() {
   const Title = () => {
@@ -9,7 +11,9 @@ export default function App() {
   return (
     <div>
       <Title></Title>
-      
+      <ActiveList
+        listOfTodos = {todos}
+      ></ActiveList>
     </div>
   );
 }
