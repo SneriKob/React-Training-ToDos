@@ -7,3 +7,8 @@ p {
 .InActiveListItem{
   text-decoration: line-through;
 }
+
+.InfoPanel{
+  border: 2px;
+  border-style: solid;
+}

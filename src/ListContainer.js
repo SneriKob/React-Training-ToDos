@@ -7,27 +7,34 @@ export default class ListContainer extends Component {
   state = {
     todos: [
       {
-        description: 'Einkaufen gehen'
+        description: 'Einkaufen gehen',
+        details: 'hier könnten weitere infos stehen'
       },
       {
-        description: 'Haare bürsten'
+        description: 'Haare bürsten',
+        details: 'hier könnten weitere infos stehen'
       },
       {
-        description: 'Kuchen backen'
+        description: 'Kuchen backen',
+        details: 'hier könnten weitere infos stehen'
       },
       {
-        description: 'Wäsche waschen'
+        description: 'Wäsche waschen',
+        details: 'hier könnten weitere infos stehen'
       },
     ], 
     done: [
       {
-        description: 'State einfügen'
+        description: 'State einfügen',
+        details: 'hier könnten weitere infos stehen'
       },
       {
-        description: 'Sportwagen in Garage fahren'
+        description: 'Sportwagen in Garage fahren',
+        details: 'hier könnten weitere infos stehen'
       },
       {
-        description: 'Projekt eröffnen'
+        description: 'Projekt eröffnen',
+        details: 'hier könnten weitere infos stehen'
       }
     ],
     addText: ''
