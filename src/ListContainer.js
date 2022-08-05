@@ -14,6 +14,9 @@ export default class ListContainer extends Component {
       {
         description: 'Kuchen backen'
       },
+      {
+        description: 'Wäsche waschen'
+      },
     ], 
     done: [
       {

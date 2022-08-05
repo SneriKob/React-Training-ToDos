@@ -5,14 +5,14 @@ class ActiveList extends Component {
     const items = this.props.listOfTodos.map((item, index) => {
         return(
           <div className='ActiveListItem'> 
-            <input type='checkbox' id={index} onChange={() => this.props.onChecked(index)}></input>
+            <input type='checkbox' id={index} value={index} onClick={() => this.props.onChecked(index)} checked={false}></input>
             <label for={index}>{item.description}</label>
           </div>
         )
     });
   
     return( 
-      <div> 
+      <div className='ActiveList'> 
         {items} 
       </div>
     )

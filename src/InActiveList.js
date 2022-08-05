@@ -12,7 +12,7 @@ class InActiveList extends Component {
     });
   
     return( 
-      <div> 
+      <div className='InActiveList'> 
         {items} 
       </div>
     )
