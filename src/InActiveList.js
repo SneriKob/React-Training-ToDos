@@ -4,15 +4,19 @@ class InActiveList extends Component {
   render(){
     const items = this.props.listOfTodos.map((item, index) => {
         return(
-          <div className='InActiveListItem' key={index}> 
-            <input type='checkbox' id={index} checked></input>
-            <label for={index}>{item.description}</label>
+          <div className='row InActiveListItem' key={index}> 
+            <div className='col-1'>
+              <input type='checkbox' id={index} checked></input>
+            </div>
+            <div className='col'>
+              <label for={index}>{item.description}</label>
+            </div>
           </div>
         )
     });
   
     return( 
-      <div className='InActiveList'> 
+      <div className='row InActiveList'> 
         {items} 
       </div>
     )

@@ -4,11 +4,19 @@ import ListContainer from "./ListContainer.js"
 
 export default function App() {
   const Title = () => {
-    return <h1>TO DOs</h1>
+    return (
+      <div className='row'>
+        <div className='col'>
+         <h1>
+          TO DOs
+          </h1>
+        </div>
+      </div>
+    )
   } 
 
   return (
-    <div>
+    <div className='container'>
       <Title></Title>
       <ListContainer></ListContainer>
     </div>

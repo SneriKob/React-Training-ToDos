@@ -3,11 +3,16 @@ import React, { Component } from 'react';
 const InfoPanel = (props) => {
   if (props.state){
     return (
-      <div className = 'InfoPanel'>
-        <button onClick={props.onClose}>X</button>
-        <p>
-          {props.details}
-        </p>
+      <div className = 'row InfoPanel'>
+        <div className='col-1'>
+          <button onClick={props.onClose} className='btn btn-danger'>X</button>
+        </div>
+        <div className='col'>
+          <p>
+            {props.details}
+          </p>
+        </div>
+        
       </div>
     )
   }
@@ -17,18 +22,25 @@ class ActiveList extends Component {
   render() {
     const items = this.props.listOfTodos.map((item, index) => {
       return (
-        <div className="ActiveListItem" key={index}>
-          <input
-            type="checkbox"
-            id={index}
-            onClick={() => this.props.onChecked(index)}
-            checked={false}
-          ></input>
-          <button 
-            onClick={() => this.props.onInfoClick(index)}>
-            Info
-          </button>
-          <label for={index}> {item.description}</label>
+        <div className="row ActiveListItem" key={index}>
+          <div className='col-1'>
+            <input
+              type="checkbox"
+              id={index}
+              onClick={() => this.props.onChecked(index)}
+              checked={false}
+            ></input>
+          </div>
+          <div className='col'>
+            <label for={index}>{item.description}</label>
+          </div>
+          <div className='col-2'>
+            <button 
+              className='btn btn-dark'
+              onClick={() => this.props.onInfoClick(index)}>
+              Info
+            </button>
+          </div>
         </div>
       );
     });
@@ -37,7 +49,7 @@ class ActiveList extends Component {
 
     return (
     <div 
-      className="ActiveList">
+      className="row ActiveList">
         {items}
         <InfoPanel
           state={this.props.toggleDetails}

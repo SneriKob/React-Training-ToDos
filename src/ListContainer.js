@@ -94,7 +94,7 @@ export default class ListContainer extends Component {
 
   render(){
     return(
-      <div className='container'>
+      <div className='row'>
         <NewTodoForm
           onChangeAdd = {this.handleChange}
           onChangeAddDetails = {this.handleChangeDetails}
