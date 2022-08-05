@@ -4,6 +4,7 @@ const InfoPanel = (props) => {
   if (props.state){
     return (
       <div className = 'InfoPanel'>
+        <button onClick={props.onClose}>X</button>
         <p>
           {props.details}
         </p>
@@ -41,6 +42,7 @@ class ActiveList extends Component {
         <InfoPanel
           state={this.props.toggleDetails}
           details={this.props.listOfTodos[currIndex].details}
+          onClose={this.props.onInfoClose}
         ></InfoPanel>
     </div>
     );

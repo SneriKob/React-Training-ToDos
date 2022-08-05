@@ -40,6 +40,7 @@ export default class ListContainer extends Component {
     addText: '',
     toggleDetails: false,
     detailIndex: 0,
+    addTextDetails: '',
   }
 
   handleChecked = (i) => {
@@ -53,6 +54,12 @@ export default class ListContainer extends Component {
     })
   }
 
+  handleInfoClose = () => {
+    this.setState({
+      toggleDetails: false 
+    })
+  }
+
   handleChange = (event) => {
     const { name, value } = event.target
 
@@ -61,8 +68,16 @@ export default class ListContainer extends Component {
     })
   }
 
+  handleChangeDetails = (event) => {
+    const { name, value } = event.target
+
+    this.setState({
+      addTextDetails: value,
+    })
+  }
+
   handleAdd = () => {
-    const desc = {description: this.state.addText};
+    const desc = {description: this.state.addText, details: this.state.addTextDetails};
     this.setState({
       todos: this.state.todos.concat(desc),
       addText: ''
@@ -82,8 +97,10 @@ export default class ListContainer extends Component {
       <div className='container'>
         <NewTodoForm
           onChangeAdd = {this.handleChange}
+          onChangeAddDetails = {this.handleChangeDetails}
           onAdd = {this.handleAdd}
           addText = {this.state.addText}
+          addTextDetails = {this.state.addTextDetails}
         ></NewTodoForm>
         <br></br>
         <ActiveList
@@ -92,6 +109,7 @@ export default class ListContainer extends Component {
           toggleDetails = {this.state.toggleDetails}
           detailIndex = {this.state.detailIndex}
           onInfoClick = {this.handleInfoClick}
+          onInfoClose = {this.handleInfoClose}
         ></ActiveList>
         <br></br>
         <InActiveList
