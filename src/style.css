@@ -6,6 +6,7 @@ p {
 
 .InActiveListItem{
   text-decoration: line-through;
+  font-size: small;
 }
 
 .InfoPanel{

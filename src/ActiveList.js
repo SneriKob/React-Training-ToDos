@@ -28,7 +28,7 @@ class ActiveList extends Component {
             onClick={() => this.props.onInfoClick(index)}>
             Info
           </button>
-          <label for={index}>{item.description}</label>
+          <label for={index}> {item.description}</label>
         </div>
       );
     });
