@@ -8,19 +8,19 @@ export default class ListContainer extends Component {
     todos: [
       {
         description: 'Einkaufen gehen',
-        details: 'hier könnten weitere infos stehen'
+        details: 'hier könnten weitere infos stehen zum Einkaufen'
       },
       {
         description: 'Haare bürsten',
-        details: 'hier könnten weitere infos stehen'
+        details: 'hier könnten weitere infos stehen für Haare'
       },
       {
         description: 'Kuchen backen',
-        details: 'hier könnten weitere infos stehen'
+        details: 'hier könnten weitere infos stehen zu Kuchen'
       },
       {
         description: 'Wäsche waschen',
-        details: 'hier könnten weitere infos stehen'
+        details: 'hier könnten weitere infos stehen für Wäsche'
       },
     ], 
     done: [
@@ -37,7 +37,9 @@ export default class ListContainer extends Component {
         details: 'hier könnten weitere infos stehen'
       }
     ],
-    addText: ''
+    addText: '',
+    toggleDetails: false,
+    detailIndex: 0,
   }
 
   handleChecked = (i) => {
@@ -45,7 +47,9 @@ export default class ListContainer extends Component {
       todos: this.state.todos.filter((val, index) => {
         return index !== i
       }),
-      done: this.state.done.concat(this.state.todos[i]) 
+      done: this.state.done.concat(this.state.todos[i]), 
+      toggleDetails: false,
+      detailIndex: 0,
     })
   }
 
@@ -65,6 +69,13 @@ export default class ListContainer extends Component {
     })
   }
 
+  handleInfoClick = (i) => {
+    const state = true;
+    this.setState({
+      toggleDetails: state,
+      detailIndex: i,
+    })
+  }
 
   render(){
     return(
@@ -78,6 +89,9 @@ export default class ListContainer extends Component {
         <ActiveList
           listOfTodos={this.state.todos}
           onChecked = {this.handleChecked}
+          toggleDetails = {this.state.toggleDetails}
+          detailIndex = {this.state.detailIndex}
+          onInfoClick = {this.handleInfoClick}
         ></ActiveList>
         <br></br>
         <InActiveList

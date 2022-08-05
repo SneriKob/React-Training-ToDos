@@ -13,19 +13,6 @@ const InfoPanel = (props) => {
 } 
 
 class ActiveList extends Component {
-  state = {
-    toggleDetails: false,
-    detailIndex: 0,
-  };
-
-  handleClick = (i) => {
-    const state = true;
-    this.setState({
-      toggleDetails: state,
-      detailIndex: i,
-    })
-  }
-
   render() {
     const items = this.props.listOfTodos.map((item, index) => {
       return (
@@ -37,7 +24,7 @@ class ActiveList extends Component {
             checked={false}
           ></input>
           <button 
-            onClick={() => this.handleClick(index)}>
+            onClick={() => this.props.onInfoClick(index)}>
             Info
           </button>
           <label for={index}>{item.description}</label>
@@ -45,14 +32,14 @@ class ActiveList extends Component {
       );
     });
 
-    const currIndex = this.state.detailIndex;
+    const currIndex = this.props.detailIndex;
 
     return (
     <div 
       className="ActiveList">
         {items}
         <InfoPanel
-          state={this.state.toggleDetails}
+          state={this.props.toggleDetails}
           details={this.props.listOfTodos[currIndex].details}
         ></InfoPanel>
     </div>
