@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import ActiveListItem from "./ActiveListItem"
+import InActiveListItem from "./ActiveListItem"
 
-class ActiveList extends Component {
+class InActiveList extends Component {
   render(){
     const listOfTodos = [
       {
@@ -27,13 +27,13 @@ class ActiveList extends Component {
     ]
 
     const items = listOfTodos.map((item, index) => {
-      if(!item.isDone){
+      if(item.isDone){
         return(
-        <ActiveListItem
+        <InActiveListItem
         id={index}
         description={item.description}
         >
-        </ActiveListItem>)
+        </InActiveListItem>)
       } else {
         return
       }
@@ -47,13 +47,13 @@ class ActiveList extends Component {
   }
 } 
 
-const ActiveListItem = (props) => {
+const InActiveListItem = (props) => {
   return (
-    <div className='ActiveListItem'> 
-        <input type='checkbox' id={props.id}></input>
+    <div className='InActiveListItem'>
+        <input type='checkbox' checked id={props.id}></input>
         <label for={props.id}>{props.description}</label>
     </div>
   )
 }
 
-export default ActiveList;
+export default InActiveList;
