@@ -3,7 +3,7 @@ import React, {Component} from "react";
 class NewTodoForm extends Component {
   render(){
     return (
-      <form>
+      <div>
         <div className='form-row'>
           <div className='form-group col-md-6'>
             <label for="inputAdd">Beschreibung</label>
@@ -33,7 +33,7 @@ class NewTodoForm extends Component {
             <button onClick={this.props.onAdd} className='btn btn-dark btn-sm'>Neue Aufgabe</button> 
           </div>
         </div>
-      </form>
+      </div>
     )  
   }
 }
