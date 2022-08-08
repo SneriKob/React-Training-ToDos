@@ -3,42 +3,38 @@ import React, {Component} from "react";
 class NewTodoForm extends Component {
   render(){
     return (
-      <div className='row'>
-        <div className='row'>
-          <div className='col'>
+      <form>
+        <div className='form-row'>
+          <div className='form-group col-md-6'>
+            <label for="inputAdd">Beschreibung</label>
             <input 
-            type='text' 
-            name='inputAdd' 
-            value={this.props.addText} 
-            onChange={this.props.onChangeAdd}
-            >
+              type='text' 
+              name='inputAdd' 
+              className='form-control'
+              placeholder="Beschreibung"
+              value={this.props.addText} 
+              onChange={this.props.onChangeAdd}
+              >
             </input>
           </div>
-          <div className='col'>
-            <label> Beschreibung</label>
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col'>
+          <div className='form-group col-md-6'>
+            <label for="inputAddDetails">Details</label>
             <input 
-            type='text' 
-            name='inputAddDetails' 
-            value={this.props.addTextDetails} 
-            onChange={this.props.onChangeAddDetails}>
+              type='text' 
+              name='inputAddDetails' 
+              className='form-control'
+              placeholder="Details"
+              value={this.props.addTextDetails} 
+              onChange={this.props.onChangeAddDetails}>
             </input>
           </div>
-          <div className='col'>
-            <label > Details</label>
+        </div>
+        <div className='form-row'>
+          <div className='col-2'>
+            <button onClick={this.props.onAdd} className='btn btn-dark btn-sm'>Neue Aufgabe</button> 
           </div>
         </div>
-        <div className='row'>
-          <div className='col-1'>
-            <button onClick={this.props.onAdd}>+</button> 
-          </div>
-        </div>
-        
-        
-      </div>
+      </form>
     )  
   }
 }
