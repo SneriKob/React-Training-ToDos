@@ -19,14 +19,13 @@ class NewTodoForm extends Component {
           </div>
           <div className='form-group col-md-6'>
             <label for="inputAddDetails">Details</label>
-            <input 
-              type='text' 
+            <textarea
               name='inputAddDetails' 
               className='form-control'
               placeholder="Details"
               value={this.props.addTextDetails} 
               onChange={this.props.onChangeAddDetails}>
-            </input>
+            </textarea>
           </div>
         </div>
         <div className='form-row'>
