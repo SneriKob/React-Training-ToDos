@@ -16,8 +16,12 @@ class InActiveList extends Component {
     });
   
     return( 
-      <div className='row InActiveList'> 
-        {items} 
+      <div className='row justify-content-end'>
+        <div className='col-10'> 
+          <div className='card card-body'> 
+            {items} 
+          </div>
+        </div>
       </div>
     )
   }

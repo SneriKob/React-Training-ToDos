@@ -20,26 +20,28 @@ class ActiveList extends Component {
 
     const items = toDos.map((item, index) => {
       return (
-        <div className="row ActiveListItem" key={index}>
-          <div className='col-1'>
-            <input
-              type="checkbox"
-              id={index}
-              onClick={() => this.props.onChecked(index)}
-              checked={false}
-            ></input>
+        <li className="list-group-item ActiveListItem" key={index}>
+          <div className='row'>
+            <div className='col-1'>
+              <input
+                type="checkbox"
+                id={index}
+                onClick={() => this.props.onChecked(index)}
+                checked={false}
+              ></input>
+            </div>
+            <div className='col'>
+              <label for={index}>{item.description}</label>
+            </div>
+            <div className='col-2'>
+              <button 
+                className='btn btn-dark btn-sm'
+                onClick={() => this.props.onInfoClick(index)}>
+                Info
+              </button>
+            </div>
           </div>
-          <div className='col'>
-            <label for={index}>{item.description}</label>
-          </div>
-          <div className='col-2'>
-            <button 
-              className='btn btn-dark'
-              onClick={() => this.props.onInfoClick(index)}>
-              Info
-            </button>
-          </div>
-        </div>
+        </li>
       );
     });
 
@@ -47,7 +49,9 @@ class ActiveList extends Component {
     return (
     <div 
       className="row ActiveList">
+        <ul className='list-group list-group-flush'>
         {items}
+        </ul>
         <InfoPanel
           state={this.props.toggleDetails}
           desc={(toDos.length > currIndex)?toDos[currIndex].description:''}
