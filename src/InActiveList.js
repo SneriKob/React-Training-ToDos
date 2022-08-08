@@ -3,7 +3,7 @@ import React, {Component} from "react";
 class InActiveList extends Component {
   render(){
     const items = this.props.listOfTodos.map((item, index) => {
-        const myKey = 'InActive'+ {index};
+        const myKey = 'InActive'+ index;
         return(
           <div className='row InActiveListItem' key={myKey}> 
             <div className='col-1'>
