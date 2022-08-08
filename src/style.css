@@ -5,11 +5,5 @@ p {
 }
 
 .InActiveListItem{
-  text-decoration: line-through;
   font-size: small;
-}
-
-.InfoPanel{
-  border: 2px;
-  border-style: solid;
 }

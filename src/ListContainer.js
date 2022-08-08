@@ -85,7 +85,7 @@ export default class ListContainer extends Component {
   }
 
   handleInfoClick = (i) => {
-    const state = true;
+    const state = !this.state.toggleDetails;
     this.setState({
       toggleDetails: state,
       detailIndex: i,
