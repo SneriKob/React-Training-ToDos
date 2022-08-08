@@ -3,16 +3,12 @@ import React, { Component } from 'react';
 const InfoPanel = (props) => {
   if (props.state){
     return (
-      <div className = 'row InfoPanel'>
-        <div className='col-1'>
-          <button onClick={props.onClose} className='btn btn-danger'>X</button>
-        </div>
-        <div className='col'>
-          <p>
-            {props.details}
-          </p>
-        </div>
-        
+      <div className='card card-body'>
+        <p className='card-text'>  
+          <h5 class="card-title">Details zu {props.desc}</h5>
+          {' '+props.details}
+        </p>
+        <button onClick={props.onClose} className='btn btn-danger btn-sm'>Schließen</button>
       </div>
     )
   }
@@ -20,7 +16,9 @@ const InfoPanel = (props) => {
 
 class ActiveList extends Component {
   render() {
-    const items = this.props.listOfTodos.map((item, index) => {
+    const toDos = this.props.listOfTodos;
+
+    const items = toDos.map((item, index) => {
       return (
         <div className="row ActiveListItem" key={index}>
           <div className='col-1'>
@@ -46,15 +44,15 @@ class ActiveList extends Component {
     });
 
     const currIndex = this.props.detailIndex;
-
     return (
     <div 
       className="row ActiveList">
         {items}
         <InfoPanel
           state={this.props.toggleDetails}
-          details={this.props.listOfTodos[currIndex].details}
-          onClose={this.props.onInfoClose}
+          desc={(toDos.length > currIndex)?toDos[currIndex].description:''}
+          details={(toDos.length > currIndex)?toDos[currIndex].details:''}
+          onClose={(this.props.onInfoClose)}
         ></InfoPanel>
     </div>
     );
