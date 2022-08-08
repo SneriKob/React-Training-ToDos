@@ -78,11 +78,13 @@ export default class ListContainer extends Component {
 
   handleAdd = () => {
     const desc = {description: this.state.addText, details: this.state.addTextDetails};
-    this.setState({
-      todos: this.state.todos.concat(desc),
-      addText: '',
-      addTextDetails: ''
-    })
+    if (desc.description != ''){
+      this.setState({
+        todos: this.state.todos.concat(desc),
+        addText: '',
+        addTextDetails: ''
+      })
+    }
   }
 
   handleInfoClick = (i) => {
