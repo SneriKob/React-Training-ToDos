@@ -6,7 +6,7 @@ const InfoPanel = (props) => {
       <div className='card card-body'>
         <p className='card-text'>  
           <h5 class="card-title">Details zu {props.desc}</h5>
-          {' '+props.details}
+          {(props.details == '')?'Ups! Hier stehen keine Details':props.details}
         </p>
         <button onClick={props.onClose} className='btn btn-danger btn-sm'>Schließen</button>
       </div>
