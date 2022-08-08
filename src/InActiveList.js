@@ -3,13 +3,14 @@ import React, {Component} from "react";
 class InActiveList extends Component {
   render(){
     const items = this.props.listOfTodos.map((item, index) => {
+        const myKey = 'InActive'+ {index};
         return(
-          <div className='row InActiveListItem' key={index}> 
+          <div className='row InActiveListItem' key={myKey}> 
             <div className='col-1'>
-              <input type='checkbox' id={index} checked></input>
+              <input type='checkbox' id={myKey} checked></input>
             </div>
             <div className='col'>
-              <label for={index}>{item.description}</label>
+              <label for={myKey}>{item.description}</label>
             </div>
           </div>
         )
